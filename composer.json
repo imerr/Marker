@@ -1,0 +1,40 @@
+{
+    "name": "imer/marker",
+    "description": "Object marking/selecting for laravel 5",
+    "keywords": [
+        "mark",
+        "remember",
+        "object",
+        "session",
+        "select",
+        "checkbox",
+        "laravel-5",
+        "laravel5"
+    ],
+    "homepage": "https://github.com/imerr/Marker",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robin 'iMer' Rolf",
+            "email": "imer@imer.cc",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": ">=5",
+        "illuminate/routing": ">=5",
+        "illuminate/http": ">=5"
+    },
+    "autoload": {
+        "psr-4": {
+            "imer\\Marker\\": "src/"
+        }
+    },
+    "support": {
+        "source": "https://github.com/imerr/Marker",
+        "issues": "https://github.com/imerr/Marker/issues"
+    },
+    "minimum-stability": "dev"
+}
