@@ -46,6 +46,14 @@ class Marker {
         return $this->type;
     }
 
+    public function options() {
+        return $this->options;
+    }
+
+    public function nestedOptions($type) {
+        return Config::get('marker.types.' . $type . '.options', []);
+    }
+
     public function validate($value) {
         if (is_callable($this->validator)) {
             return call_user_func($this->validator, $value);
@@ -80,10 +88,11 @@ class Marker {
 
     public function makeCheckbox($value) {
         return '<input type="checkbox" data-marker="checkbox" data-marker-type="' . $this->type . '" ' .
-               'value="' . e($value) . '"' . (in_array($value, $this->items) ? ' checked="checked"' : '') . '>';
+        'value="' . e($value) . '"' . (in_array($value, $this->items) ? ' checked="checked"' : '') . '>';
     }
+
     public function makeToggleAllCheckbox() {
-        return '<input type="checkbox" data-marker="checkbox-toggle" data-marker-type="'.$this->type.'">';
+        return '<input type="checkbox" data-marker="checkbox-toggle" data-marker-type="' . $this->type . '">';
     }
 
     public function clear() {
@@ -97,4 +106,5 @@ Marker::$defaults = [
         return true;
     },
     'max' => 10000,
+    'options' => [],
 ];
